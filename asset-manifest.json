@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Previsao-do-Tempo/static/css/main.1d90c58f.css",
+    "main.js": "/Previsao-do-Tempo/static/js/main.6e64aeba.js",
+    "static/js/787.ec411d0e.chunk.js": "/Previsao-do-Tempo/static/js/787.ec411d0e.chunk.js",
+    "index.html": "/Previsao-do-Tempo/index.html",
+    "main.1d90c58f.css.map": "/Previsao-do-Tempo/static/css/main.1d90c58f.css.map",
+    "main.6e64aeba.js.map": "/Previsao-do-Tempo/static/js/main.6e64aeba.js.map",
+    "787.ec411d0e.chunk.js.map": "/Previsao-do-Tempo/static/js/787.ec411d0e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d90c58f.css",
+    "static/js/main.6e64aeba.js"
+  ]
+}

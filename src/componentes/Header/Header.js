@@ -1,0 +1,150 @@
+
+import './Header.css';
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+const Header = ({ onCityChange }) => {
+
+  const closeLocationPopup = () => {
+    setLocationLoaded(true); // Define locationLoaded como true para ocultar o pop-up
+  };
+
+  const [cidade, setCidade] = useState("");
+  const [previsaoTempo, setPrevisaoTempo] = useState(null);
+  const [locationLoaded, setLocationLoaded] = useState(false);
+  const [navBarActive, setNavBarActive] = useState(""); // Novo estado para o ID do navBar
+
+  const handleChange = (event) => {
+    setCidade(event.target.value);
+  };
+
+  const handleSearch = () => {
+    if (cidade) {
+      fetch(`https://api.weatherapi.com/v1/current.json?key=3c56208e731c4536822115400231310&q=${cidade}&lang=pt`)
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json();
+          }
+          throw new Error('Failed to fetch data from the API');
+        })
+        .then((data) => {
+          setPrevisaoTempo(data);
+
+          fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c56208e731c4536822115400231310&q=${cidade}&lang=pt`)
+            .then((response) => {
+              if (response.status === 200) {
+                return response.json();
+              }
+              throw new Error('Failed to fetch data from the second API');
+            })
+            .then((data2) => {
+              // Passar dados de ambas as solicitações para o componente pai
+              onCityChange(cidade, data, data2);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+
+          onCityChange(cidade, data);
+
+          // Limpar o input definindo a cidade como uma string vazia
+          setCidade("");
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+        setLocationLoaded(true);
+        setNavBarActive("searched");
+      }
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  useEffect(() => {
+    if (!locationLoaded) {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          fetch(`https://api.weatherapi.com/v1/current.json?key=3c56208e731c4536822115400231310&q=${latitude},${longitude}&lang=pt`)
+            .then((response) => {
+              if (response.status === 200) {
+                return response.json();
+              }
+              throw new Error('Failed to fetch data from the API');
+            })
+            .then((data) => {
+              const userCity = data.location.name;
+              setCidade(userCity);
+              setLocationLoaded(true);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        });
+      }
+    }
+  }, [locationLoaded]);
+
+  useEffect(() => {
+    // Chame handleSearch aqui após setLocationLoaded para garantir que a cidade seja definida primeiro
+    if (locationLoaded) {
+      handleSearch();
+      // Adicione um atraso para limpar o input após um curto período
+      setTimeout(() => {
+        setCidade("");
+      }, 1); // Limpe o input definindo a cidade como uma string vazia após 1 segundo
+    }
+  }, [locationLoaded]);
+
+  useEffect(() => {
+    handleSearch();
+  }, []);
+
+
+
+
+
+  return (
+    
+     <nav className={`navBar ${navBarActive === "searched" ? "navBar-active" : ""}`}>
+      <img src="assets/logo.png" alt="Logo" />
+      <div className="search-container">
+        <div className="input-container">
+          <input
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+            type="text"
+            id="searchInput"
+            placeholder="Busque por sua cidade..."
+            value={cidade}
+          />
+          <FontAwesomeIcon
+            onClick={handleSearch}
+            flip="horizontal"
+            icon={faSearch}
+            className="search-icon"
+          />
+        </div>
+      </div>
+      {previsaoTempo ? (
+        <div className="mt-4">
+          {/* Coloque aqui o que você deseja renderizar quando previsaoTempo existe */}
+        </div>
+      ) : null}
+
+      {!locationLoaded && (
+        <div className="location-popup">
+          <p>Por favor, ative a localização e recarregue a página para obter informações da sua localização atual.</p>
+          <span className="close-button" onClick={closeLocationPopup}>X</span>
+        </div>
+      )}
+    </nav>
+    
+  );
+};
+
+export default Header;

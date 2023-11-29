@@ -1,0 +1,39 @@
+.faixa-header {
+    background-color: #124e70;
+    height: 40px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 23px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.texto1{
+    width: 670px;
+    line-height: 10px;
+    margin-left: 17px;
+}
+
+.texto2{
+    width: 300px;
+    line-height: 10px;
+}
+
+
+.texto2
+
+.faixa-header p {
+    margin: 0px;
+    line-height: 40px;
+    font-size: .9rem;
+}
+
+
+@media (max-width: 500px){
+
+    .faixa-header{
+        display: none;
+    }
+
+    
+}

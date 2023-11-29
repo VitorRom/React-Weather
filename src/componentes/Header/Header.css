@@ -1,0 +1,130 @@
+.navBar {
+  background-color: #1689d1;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: center;
+  gap: 190px;
+}
+
+.navBar-active
+{
+  padding: 0px 0px 0px 150px
+}
+
+.navBar img {
+  height: 80px;
+    margin-right: 10px
+
+}
+
+.navBar .search-container {
+  position: relative;
+  width: 500px;
+}
+
+.navBar .input-container {
+  position: relative;
+
+}
+
+.navBar input {
+  background-color: #0267a3;
+  color: #fff;
+  padding: 10px 40px 10px 20px;
+  /* Ajustei o padding para dar espaço ao ícone */
+  border: none;
+  font-size: 1rem;
+  height: 20px;
+  width: 90%;
+  border-radius: 5px;
+  margin-left: 0px;
+}
+
+.navBar .search-icon {
+  position: absolute;
+  right: -50px;
+  top: 30%;
+  /* Centraliza verticalmente */
+  transform: translateY(-50%);
+  /* Centraliza verticalmente */
+  color: #ffffff69;
+  /* Cor do ícone */
+  transform: rotate(90deg);
+  margin-right: 60px;
+}
+
+.navBar input:focus {
+  outline: 0;
+}
+
+.navBar input::placeholder {
+  color: #ffffff69;
+  font-size: 1rem;
+}
+
+.location-popup {
+  position: fixed;
+  top: 25%;
+  left: 49.5%;
+  transform: translate(-50%, -50%);
+  background: rgb(244, 244, 244);
+  border: 1px solid #ccc;
+  padding: 15px 30px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 9999;
+}
+
+.location-popup p {
+  margin: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 500px){
+  .navBar{
+    height: 80px;
+    gap: 0px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    padding: 0px;
+    
+  }
+
+  .navBar img {
+   display: none;
+  }
+
+  .navBar .search-container{
+    width: 70%;
+    margin-left: -20px;
+  }
+
+  .navBar input{
+    background-color: rgba(254, 252, 252, 0.381);
+    box-shadow: 0 0 5px 0px rgb(255, 255, 255);
+    padding: 10px 20px 10px 20px;
+    margin-left: 6px;
+  }
+
+  .navBar input::placeholder {
+    color: #ffffffb0;
+    font-size: 1rem;
+  }
+
+  .location-popup{
+    display: none;
+  }
+}
+

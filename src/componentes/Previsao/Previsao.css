@@ -1,0 +1,123 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.texto-clima {
+    display: flex;
+    flex-direction: column;
+    width: 470px;
+    margin: 15px 40px 0px -75px;
+    align-items: baseline
+}
+
+.home-container h2 {
+    font-size: 2rem;
+    margin: 30px 0px 10px 0px;
+}
+
+.home-container p {
+    font-size: 1.2rem;
+    height: 0px;
+}
+
+.texto-home {
+    display: flex;
+    letter-spacing: 1px;
+    gap: 20px;
+}
+
+.container-temperatura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperatura {
+    display: flex;
+    margin-bottom: 5px;
+    margin-top: -30px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperatura p {
+    line-height: 0px;
+    font-size: 1.5rem;
+}
+
+.min-max {
+    display: flex;
+    height: 20px;
+    margin-top: 15px;
+    gap: 40px;
+}
+
+@media(max-width: 1300px){
+    .home-container{
+        padding-top: 0px;
+        padding-bottom: 30px;
+    }
+    .home-container h2{
+        margin: 20px 0px 0px 0px;
+    }
+
+    .temperatura{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .min-max{
+        margin-top: 0px;
+    
+    }
+}
+
+
+@media (max-height: 600px) {
+    .home-container {
+        padding-bottom: 20px;
+    }
+
+
+}
+
+
+@media (max-width: 500px) {
+    .home-container {
+        flex-direction:column ;
+        height: 300px;
+        gap: 60px;
+        border-bottom: none;
+    }
+
+    .texto-clima{
+        margin: 0px;
+        align-items: center;
+        max-width: 350px;
+    }
+
+    .txt-dia{
+        display: none;
+    }
+
+    .temperatura{
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .img-temperatura{
+        width: 120px;
+        margin-bottom: 0px;
+    }
+
+    .min-max{
+        margin-top: 30px;
+    }
+}
