@@ -58,7 +58,7 @@
   }
 }
 
-@media(max-height: 700px){
+@media(max-height: 700px ) and (min-width: 1000px){
   
   .home{
     padding-bottom: 130px;
