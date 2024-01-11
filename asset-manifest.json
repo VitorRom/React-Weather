@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Previsao_React/static/css/main.363d8ed2.css",
+    "main.css": "/Previsao_React/static/css/main.eb52497b.css",
     "main.js": "/Previsao_React/static/js/main.2f5e61d2.js",
     "static/js/787.ec411d0e.chunk.js": "/Previsao_React/static/js/787.ec411d0e.chunk.js",
     "static/media/cloudy.png": "/Previsao_React/static/media/cloudy.cbe020b484289f72b7ad.png",
@@ -12,12 +12,12 @@
     "static/media/ceu-nublado-a-noite-com-lua_73110-5013.jpg": "/Previsao_React/static/media/ceu-nublado-a-noite-com-lua_73110-5013.df2620a8a9ae3638594f.jpg",
     "static/media/white-cloud-blue-sky_74190-2381.jpg": "/Previsao_React/static/media/white-cloud-blue-sky_74190-2381.fa3181f29b72ebdfa9f3.jpg",
     "index.html": "/Previsao_React/index.html",
-    "main.363d8ed2.css.map": "/Previsao_React/static/css/main.363d8ed2.css.map",
+    "main.eb52497b.css.map": "/Previsao_React/static/css/main.eb52497b.css.map",
     "main.2f5e61d2.js.map": "/Previsao_React/static/js/main.2f5e61d2.js.map",
     "787.ec411d0e.chunk.js.map": "/Previsao_React/static/js/787.ec411d0e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.363d8ed2.css",
+    "static/css/main.eb52497b.css",
     "static/js/main.2f5e61d2.js"
   ]
 }
