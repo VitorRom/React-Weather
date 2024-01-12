@@ -93,14 +93,20 @@
     .home-container {
         flex-direction:column ;
         height: 300px;
-        gap: 60px;
+        gap: 10px;
         border-bottom: none;
+    }
+
+    .home-container h2{
+        font-weight: 400;
+        margin-top: 0px;
     }
 
     .texto-clima{
         margin: 0px;
         align-items: center;
         max-width: 350px;
+        margin-bottom: 15px;
     }
 
     .txt-dia{
@@ -111,10 +117,15 @@
         flex-direction: column;
         gap: 0px;
     }
+    .temperatura p {
+        font-size: 1.7rem;
+        font-weight: 400;
+    }
+
 
     .img-temperatura{
         width: 120px;
-        margin-bottom: 0px;
+        margin-bottom: -25px;
     }
 
     .min-max{

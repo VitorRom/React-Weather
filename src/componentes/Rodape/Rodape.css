@@ -14,6 +14,7 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
 }
 
 .legal {
@@ -58,6 +59,7 @@ section {
   footer {
     bottom: -200px;
   }
+
   section {
     align-items: center;
     padding-left: 0;
@@ -65,13 +67,25 @@ section {
   }
 }
 
-@media (max-width: 500px){
-  footer{
-    height: 270px;
+@media (max-width: 500px) {
+  footer {
+    height: 40px;
+    position: relative;
+    bottom: 0px;
+
+  }
+  section {
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+  
+  .legal{
+    margin-bottom: 30px;
   }
 
-  section {
-    padding-left: 0px;
+  
+  .background {
+    position: relative;
   }
 
 }

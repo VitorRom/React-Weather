@@ -3,9 +3,7 @@
     width: 1100px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
-    margin-left: -25px;
-
+   margin: 10px 0px 130px -25px;
 }
 
 .lista-previsao li {
@@ -56,6 +54,21 @@ ul li .img-temperatura {
     margin-left: 5px;
 }
 
+.mais-informacoes{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.mais-informacoes-mobile{
+    display: none;
+}
+
+.mais-informacoes-pc{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 
 .li-1,
 .li-2,
@@ -63,51 +76,83 @@ ul li .img-temperatura {
 .li-4,
 .li-5,
 .li-6 {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid  rgba(128, 128, 128, 0.377);
 }
 
 .li-2,
 .li-4,
 .li-6,
 .li-8 {
-    border-left: 1px solid gray;
+    border-left: 1px solid rgba(128, 128, 128, 0.377);
 }
 
 .seta {
     height: 30px;
+    color: #1648b4;
 }
 
+
+
 @media (max-width: 500px) {
+    .list-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .seta {
+        height: 25px;
+    }
+
+    .mais-informacoes-pc{
+        display: none;
+    }
+
+    .mais-informacoes-mobile{
+        display: block;
+        font-size: 1rem !important;
+        font-weight: 500;
+    }
+
+
     .lista-previsao {
-        margin-top: 100px;
-        max-width: 100%;
-        width: 100%;
+        margin-top: 120px;
+        max-width: 90%;
+        width: 90%;
         margin-left: -7px;
-        margin-bottom: 200px;
+        margin: 0px 0px 20px -7px;
+        border-radius: 15px;        
+        padding: 15px 0px;
+        gap: 15px 45px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
     .lista-previsao li {
-        width: 100px;
+        width: 130px;
+        border-top: 1px solid rgba(255, 255, 255, 0.212);
         height: 80px;
+
     }
 
     .lista-previsao p {
-        font-size: .7rem;
+        font-size: .85rem;
     }
-}
 
-@media (max-width: 500px) {
 
-    .lista-previsao{
-        margin-bottom: 90px;
+    .img-sensacao-termica, .img-chuva{
+        margin-left: 0px;
     }
+
+    .img-UV{
+        margin-left: -8px;
+    }
+
 
     .lista-previsao li {
-        padding: 0px 45px 0px 20px;
+        padding: 0px 10px 0px 10px;
     }
+
 
     .li-8,
     .li-7 {
@@ -133,5 +178,4 @@ ul li .img-temperatura {
     .li-8 {
         border-left: none
     }
-
 }

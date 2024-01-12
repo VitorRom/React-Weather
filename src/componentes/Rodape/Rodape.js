@@ -15,10 +15,11 @@ const Rodape = () => {
             viewBox="0 0 1600 900"
           >
             <defs>
-              <linearGradient id="bg" x2="0%" y2="100%">
-                <stop offset="0%" style={{ stopColor: 'rgba(53, 127, 242, 0.6)' }}></stop>
-                <stop offset="100%" style={{ stopColor: 'rgba(38, 89, 190, 0.06)' }}></stop>
-              </linearGradient>
+            <linearGradient id="bg" x2="0%" y2="100%">
+  <stop offset="0%" style={{ stopColor: 'rgba(80, 169, 247, 0.6)' }}></stop>
+  <stop offset="100%" style={{ stopColor: 'rgba(7, 22, 46, 0.292)' }}></stop>
+</linearGradient>
+
               <path
                 id="wave"
                 fill="url(#bg)"

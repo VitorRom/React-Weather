@@ -41,6 +41,8 @@
   padding-left: 3%;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -54,13 +56,87 @@
 @media (max-width: 500px) {
   .App {
     color: white;
-    background: linear-gradient(109.5deg, rgb(76, 203, 242) 11.2%, rgb(92, 121, 255) 91.1%);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+
+
+  .partly_cloudy {
+    background-image: url('../public/assets/partly_cloudy.png');
+
+  }
+
+  .partly_cloudy input::placeholder,  .partly_cloudy,.partly_cloudy .navBar input, .partly_cloudy .legal, .fog input::placeholder,  .fog,.fog .navBar input, .fog .legal{
+    color: rgb(62 62 62) !important;
+  }
+
+  .cloudy .ListaDiaria ul, .cloudy .proximosDias ul{
+    background-color:rgba(145, 155, 171, 0.288);
+  }
+
+  .sunny .ListaDiaria ul, .sunny .proximosDias ul{
+    background-color: rgba(56, 127, 198, 0.384);
+  }
+  
+  .night_fog .ListaDiaria ul, .night_fog .proximosDias ul{
+    background-color: rgba(63, 63, 63, 0.301);
+  }
+  
+  .heavy_rain .ListaDiaria ul, .heavy_rain .proximosDias ul{
+    background-color: rgba(110, 110, 110, 0.212);
+  }
+  .light_rain .ListaDiaria ul, .light_rain .proximosDias ul, .rain_possibility .ListaDiaria ul, .rain_possibility .proximosDias ul,  .rain_sun .ListaDiaria ul, .rain_sun .proximosDias ul{
+    background-color: rgba(223, 223, 223, 0.13);
+  }
+  .fog .ListaDiaria ul, .fog .proximosDias ul{
+    background-color: rgba(146, 146, 146, 0.103);
+  }
+
+
+  .sunny {
+    background-image: url('../public/assets/white-cloud-blue-sky_74190-2381.jpg');
+
+  }
+
+  .cloudy {
+    background-image: url('../public/assets/cloudy.png');
+
+  }
+
+  .rain_sun,  .light_rain {
+    background-image: url('../public/assets/rainy_day.png');
+
+  }
+  .rain_possibility {
+    background-image: url('../public/assets/rain_possibility.png');
+
+  }
+
+  .heavy_rain{
+    background-image: url('../public/assets/heavy_rain.png');
+  }
+
+  .fog{
+    background-image: url('../public/assets/fog.jpg');
+  }
+  
+  .night{
+    background-image: url('../public/assets/night.png')
+  }
+  .night_fog{
+    background-image: url('../public/assets/ceu-nublado-a-noite-com-lua_73110-5013.jpg')
+  }
+
+  .home{
+    padding-left: 1.8%;
+  }
+  
+  
 }
 
 @media(max-height: 700px ) and (min-width: 1000px){
   
   .home{
-    padding-bottom: 130px;
+    padding-bottom: 130px;  
   }
 }

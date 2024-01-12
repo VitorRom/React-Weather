@@ -7,13 +7,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const Header = ({ onCityChange }) => {
 
   const closeLocationPopup = () => {
-    setLocationLoaded(true); // Define locationLoaded como true para ocultar o pop-up
+    setLocationLoaded(true); 
   };
 
   const [cidade, setCidade] = useState("");
   const [previsaoTempo, setPrevisaoTempo] = useState(null);
   const [locationLoaded, setLocationLoaded] = useState(false);
-  const [navBarActive, setNavBarActive] = useState(""); // Novo estado para o ID do navBar
+  const [navBarActive, setNavBarActive] = useState(""); 
 
   const handleChange = (event) => {
     setCidade(event.target.value);
@@ -31,7 +31,8 @@ const Header = ({ onCityChange }) => {
         .then((data) => {
           setPrevisaoTempo(data);
 
-          fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c56208e731c4536822115400231310&q=${cidade}&lang=pt`)
+          fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c56208e731c4536822115400231310&q=${cidade}&days=11&lang=pt
+          `)
             .then((response) => {
               if (response.status === 200) {
                 return response.json();
@@ -39,8 +40,9 @@ const Header = ({ onCityChange }) => {
               throw new Error('Failed to fetch data from the second API');
             })
             .then((data2) => {
-              // Passar dados de ambas as solicitações para o componente pai
+          
               onCityChange(cidade, data, data2);
+              console.log(data2)
             })
             .catch((error) => {
               console.error(error);
@@ -48,7 +50,7 @@ const Header = ({ onCityChange }) => {
 
           onCityChange(cidade, data);
 
-          // Limpar o input definindo a cidade como uma string vazia
+        
           setCidade("");
         })
         .catch((error) => {
@@ -90,19 +92,19 @@ const Header = ({ onCityChange }) => {
   }, [locationLoaded]);
 
   useEffect(() => {
-    // Chame handleSearch aqui após setLocationLoaded para garantir que a cidade seja definida primeiro
+
     if (locationLoaded) {
       handleSearch();
-      // Adicione um atraso para limpar o input após um curto período
+ 
       setTimeout(() => {
         setCidade("");
-      }, 1); // Limpe o input definindo a cidade como uma string vazia após 1 segundo
+      }, 1); 
     }
-  }, [locationLoaded]);
+  });
 
   useEffect(() => {
     handleSearch();
-  }, []);
+  });
 
 
 
@@ -132,7 +134,6 @@ const Header = ({ onCityChange }) => {
       </div>
       {previsaoTempo ? (
         <div className="mt-4">
-          {/* Coloque aqui o que você deseja renderizar quando previsaoTempo existe */}
         </div>
       ) : null}
 
@@ -143,7 +144,6 @@ const Header = ({ onCityChange }) => {
         </div>
       )}
     </nav>
-    
   );
 };
 

@@ -7,15 +7,13 @@
   gap: 190px;
 }
 
-.navBar-active
-{
+.navBar-active {
   padding: 0px 0px 0px 150px
 }
 
 .navBar img {
   height: 80px;
-    margin-right: 10px
-
+  margin-right: 10px
 }
 
 .navBar .search-container {
@@ -92,26 +90,25 @@
   color: rgb(0, 0, 0);
 }
 
-@media (max-width: 500px){
-  .navBar{
+@media (max-width: 500px) {
+  .navBar {
     height: 80px;
     gap: 0px;
-    margin-bottom: 30px;
     background-color: transparent;
     padding: 0px;
-    
+
   }
 
   .navBar img {
-   display: none;
+    display: none;
   }
 
-  .navBar .search-container{
+  .navBar .search-container {
     width: 70%;
     margin-left: -20px;
   }
 
-  .navBar input{
+  .navBar input {
     background-color: rgba(254, 252, 252, 0.381);
     box-shadow: 0 0 5px 0px rgb(255, 255, 255);
     padding: 10px 20px 10px 20px;
@@ -123,8 +120,7 @@
     font-size: 1rem;
   }
 
-  .location-popup{
+  .location-popup {
     display: none;
   }
 }
-

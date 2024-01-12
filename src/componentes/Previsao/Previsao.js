@@ -18,7 +18,7 @@ const Previsao = (props) => {
         </div>
         <div className='container-temperatura'> 
           <div className='temperatura'>
-            <img src={props.img} className='img-temperatura' /><p>Temperatura {props.graus}º</p>
+            <img src={props.img} className='img-temperatura' alt='imagem temperatura ' /><p>Temperatura {props.graus}º</p>
           </div>
           <div className='min-max'>
 
