@@ -1,15 +1,9 @@
-
 import './Header.css';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Header = ({ onCityChange }) => {
-
-  const closeLocationPopup = () => {
-    setLocationLoaded(true); 
-  };
-
   const [cidade, setCidade] = useState("");
   const [previsaoTempo, setPrevisaoTempo] = useState(null);
   const [locationLoaded, setLocationLoaded] = useState(false);
@@ -31,8 +25,7 @@ const Header = ({ onCityChange }) => {
         .then((data) => {
           setPrevisaoTempo(data);
 
-          fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c56208e731c4536822115400231310&q=${cidade}&days=11&lang=pt
-          `)
+          fetch(`https://api.weatherapi.com/v1/forecast.json?key=3c56208e731c4536822115400231310&q=${cidade}&days=11&lang=pt`)
             .then((response) => {
               if (response.status === 200) {
                 return response.json();
@@ -40,28 +33,27 @@ const Header = ({ onCityChange }) => {
               throw new Error('Failed to fetch data from the second API');
             })
             .then((data2) => {
-          
               onCityChange(cidade, data, data2);
-              console.log(data2)
+              console.log(data2);
+              setCidade(""); // Limpa o campo de pesquisa
             })
             .catch((error) => {
               console.error(error);
             });
 
           onCityChange(cidade, data);
-
-        
-          setCidade("");
         })
         .catch((error) => {
           console.error(error);
         });
-        setLocationLoaded(true);
-        setNavBarActive("searched");
-      }
+      setLocationLoaded(true);
+      setNavBarActive("searched");
+    }
   };
+
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
+      event.preventDefault();
       handleSearch();
     }
   };
@@ -92,27 +84,13 @@ const Header = ({ onCityChange }) => {
   }, [locationLoaded]);
 
   useEffect(() => {
-
     if (locationLoaded) {
       handleSearch();
- 
-      setTimeout(() => {
-        setCidade("");
-      }, 1); 
     }
-  });
-
-  useEffect(() => {
-    handleSearch();
-  });
-
-
-
-
+  }, [locationLoaded]);
 
   return (
-    
-     <nav className={`navBar ${navBarActive === "searched" ? "navBar-active" : ""}`}>
+    <nav className={`navBar ${navBarActive === "searched" ? "navBar-active" : ""}`}>
       <img src="assets/logo.png" alt="Logo" />
       <div className="search-container">
         <div className="input-container">
@@ -140,7 +118,7 @@ const Header = ({ onCityChange }) => {
       {!locationLoaded && (
         <div className="location-popup">
           <p>Por favor, ative a localização e recarregue a página para obter informações da sua localização atual.</p>
-          <span className="close-button" onClick={closeLocationPopup}>X</span>
+          <span className="close-button" onClick={() => setLocationLoaded(true)}>X</span>
         </div>
       )}
     </nav>
